@@ -1,14 +1,14 @@
 const express = require("express");
-const Product = require("../models/product");
+const Product = require("../models/Product");
 
 const router = express.Router();
 
 // CREATE PRODUCT 
 router.post("/create-product", async (req, res) => {
   try {
-    const product = await product.create(req.body);
+    const newProduct = await Product.create(req.body);
 
-    res.status(201).json(product);
+    res.status(201).json(newProduct);
 
   } catch (error) {
     res.status(500).json({
@@ -18,11 +18,11 @@ router.post("/create-product", async (req, res) => {
 });
 
 // GET PRODUCTS 
-router.post("/fetch-products", async (req, res) => {
+router.get("/get-products", async (req, res) => {
   try {
-    const product = await Product.create(req.body);
+    const products = await Product.find();
 
-    res.status(201).json(product);
+    res.json(products);
 
   } catch (error) {
     res.status(500).json({

@@ -6,7 +6,7 @@ const authMiddleware = require("../middleware/authMiddleware");
 const router = express.Router();
 
 // CREATE ORDER 
-router.post("/", authMiddleware, async (req, res) => {
+router.post("/create-order", authMiddleware, async (req, res) => {
   try {
 
     const order = await Order.create({
