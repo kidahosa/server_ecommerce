@@ -4,9 +4,9 @@ const Product = require("../models/product");
 const router = express.Router();
 
 // CREATE PRODUCT 
-router.post("/", async (req, res) => {
+router.post("/create-product", async (req, res) => {
   try {
-    const product = await Product.create(req.body);
+    const product = await product.create(req.body);
 
     res.status(201).json(product);
 
@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
 });
 
 // GET PRODUCTS 
-router.post("/", async (req, res) => {
+router.post("/fetch-products", async (req, res) => {
   try {
     const product = await Product.create(req.body);
 

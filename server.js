@@ -27,4 +27,5 @@ app.listen(PORT, () => {
 // ROUTES CONNECTION 
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/products', require('./routes/productRoutes'));
+app.use('/api/orders', require('./routes/orderRoutes'));
 
