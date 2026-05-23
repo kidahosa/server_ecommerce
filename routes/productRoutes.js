@@ -1,12 +1,12 @@
 const express = require("express");
-const Product = require("../models/Product");
+const Product = require("../models/product");
 
 const router = express.Router();
 
 // CREATE PRODUCT 
 router.post("/create-product", async (req, res) => {
   try {
-    const newProduct = await Product.create(req.body);
+    const newProduct = await product.create(req.body);
 
     res.status(201).json(newProduct);
 
