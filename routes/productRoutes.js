@@ -6,7 +6,7 @@ const router = express.Router();
 // CREATE PRODUCT 
 router.post("/create-product", async (req, res) => {
   try {
-    const newProduct = await product.create(req.body);
+    const newProduct = await Product.create(req.body);
 
     res.status(201).json(newProduct);
 
@@ -20,9 +20,9 @@ router.post("/create-product", async (req, res) => {
 // GET PRODUCTS 
 router.get("/get-products", async (req, res) => {
   try {
-    const products = await Product.find();
+    const Products = await Product.find();
 
-    res.json(products);
+    res.json(Products);
 
   } catch (error) {
     res.status(500).json({
